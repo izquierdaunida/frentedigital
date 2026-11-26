@@ -51,11 +51,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-      # El certificado se emite después del primer despliegue. Este paso es
-      # idempotente y no bloquea el deploy si GitHub todavía no lo permite.
-      - name: Enforce HTTPS
-        continue-on-error: true
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh api --method PUT "repos/${GITHUB_REPOSITORY}/pages" -F https_enforced=true
