@@ -14,21 +14,22 @@ const description = SITE.description;
       <h1 class="sr-only">Frente Digital de Izquierda Unida</h1>
     </div>
     <div class="container page__grid">
-      <section class="intro">
-        <figure class="intro__media">
+      <figure class="intro__media">
           <Picture
             src={fdiu}
             alt="Cartel del Frente Digital de Izquierda Unida: un puño levantado sobre fondo rojo con el lema «Contra el fascismo» y el texto «Frente Digital»."
             formats={['webp']}
             fallbackFormat="jpg"
-            widths={[480, 720, 1080]}
-            sizes="(max-width: 600px) calc(100vw - 2rem), (max-width: 900px) 640px, 480px"
+            widths={[540, 720, 1080]}
+            sizes="(max-width: 600px) calc(100vw - 2rem), (max-width: 900px) calc(100vw - 3rem), 540px"
             quality={90}
             loading="eager"
             fetchpriority="high"
             decoding="async"
           />
         </figure>
+
+      <div class="content">
         <div class="intro__body">
           <p class="intro__lead">Hay pequeñas acciones que construyen grandes cambios.</p>
           <p>
@@ -58,19 +59,16 @@ const description = SITE.description;
             nuestras campañas.
           </p>
         </div>
-      </section>
 
-      <section class="form-card" aria-labelledby="form-title">
-        <p class="form-card__eyebrow">Frente Digital</p>
-        <h2 id="form-title" class="form-card__title">Apúntate</h2>
-
-        <form
-          id="frente-digital-form"
-          method="get"
-          action={ACTION_NETWORK.publicFormUrl}
-          data-endpoint={ACTION_NETWORK.submitUrl}
-          data-success="/gracias"
-        >
+        <div class="form-block">
+          <form
+            id="frente-digital-form"
+            method="get"
+            action={ACTION_NETWORK.publicFormUrl}
+            data-endpoint={ACTION_NETWORK.submitUrl}
+            data-success="/gracias"
+            aria-label="Inscripción en el Frente Digital"
+          >
           <div class="field">
             <label class="sr-only" for="first_name">Nombre</label>
             <input
@@ -138,8 +136,9 @@ const description = SITE.description;
               <a href={ACTION_NETWORK.publicFormUrl}>hacerlo en Action Network</a>.
             </p>
           </noscript>
-        </form>
-      </section>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </Base>
