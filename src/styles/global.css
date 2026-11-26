@@ -131,6 +131,16 @@ input:focus-visible {
 
 /* Intro */
 
+.intro__media {
+  margin: 0 0 2rem;
+}
+
+.intro__media img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
 .intro h1 {
   margin: 0;
   padding-bottom: 1.25rem;
@@ -481,6 +491,40 @@ input:focus-visible {
   color: var(--iu-red);
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.prose__toc {
+  margin: 1.5rem 0 2.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--iu-red);
+  background: var(--soft);
+  font-size: 0.9rem;
+}
+
+.prose__toc p {
+  margin: 0 0 0.5rem;
+  color: var(--ink-strong);
+  font-weight: 700;
+}
+
+.prose__toc ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.prose__toc li {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.prose__source {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 /* Responsive */

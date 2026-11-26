@@ -9,11 +9,12 @@ Construida con [Astro](https://astro.build) y publicada en GitHub Pages.
 
 ## Qué incluye
 
-- Página principal con el texto de presentación del Frente Digital.
+- Página principal con el texto de presentación y un placeholder de imagen 1440 × 1080.
 - Formulario con nombre, correo electrónico, código postal y consentimiento de privacidad.
 - Envío directo a Action Network mediante su API v2, sin exponer ninguna API key.
 - Página `/gracias` con llamadas a la Comunidad de WhatsApp y al canal de Telegram.
-- Página `/privacidad`.
+- Página `/privacidad` con el aviso legal y la política de privacidad, basada en el texto oficial de IU.
+- Favicon oficial de izquierdaunida.org.
 - Diseño responsive basado en la página original de Action Network.
 
 ## Desarrollo
@@ -34,9 +35,13 @@ src/components/Header.astro   Logo blanco de IU sobre rojo
 src/components/Footer.astro   Pie
 src/pages/index.astro         Landing y formulario
 src/pages/gracias.astro       Página de agradecimiento
-src/pages/privacidad.astro    Resumen de privacidad
+src/pages/privacidad.astro    Aviso legal y privacidad
 src/styles/global.css         Estilos
+public/placeholder-1440x1080.svg  Placeholder de la imagen principal
 public/logo-iu-blanco.png     Logo de la cabecera
+public/favicon-32x32.png      Favicon oficial de IU
+public/favicon-192x192.png    Favicon oficial de IU
+public/apple-touch-icon.png   Icono para iOS
 public/og.jpg                 Imagen para redes sociales
 public/CNAME                  Dominio personalizado de GitHub Pages
 .github/workflows/deploy.yml  Despliegue automático a GitHub Pages

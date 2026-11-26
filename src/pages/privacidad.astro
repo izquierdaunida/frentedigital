@@ -2,75 +2,171 @@
 import Base from '../layouts/Base.astro';
 import { SITE } from '../config';
 
-const title = 'Política de privacidad · Frente Digital';
+const title = 'Aviso legal y política de privacidad · Frente Digital';
 const description =
-  'Información sobre el tratamiento de datos personales en el formulario del Frente Digital de Izquierda Unida.';
+  'Aviso legal y política de privacidad de Frente Digital, el espacio digital de Izquierda Unida.';
 ---
 
 <Base title={title} description={description} noindex>
   <article class="container prose">
-    <h1>Política de privacidad</h1>
-    <p class="prose__updated">Última actualización: noviembre de 2026</p>
-
-    <p>
-      Este formulario recoge los datos que nos facilitas para que puedas formar parte del{' '}
-      <strong>Frente Digital de Izquierda Unida</strong>. Aquí tienes un resumen claro de cómo los
-      tratamos.
+    <h1>Aviso legal y política de privacidad</h1>
+    <p class="prose__updated">
+      Última actualización: noviembre de 2026. Este texto adapta el aviso legal publicado por
+      Izquierda Unida para explicar, de forma clara, cómo funciona este sitio y cómo tratamos tus
+      datos.
     </p>
 
-    <h2>1. Responsable del tratamiento</h2>
     <p>
-      <strong>Izquierda Unida</strong>. Puedes contactar con nosotros en{' '}
-      <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.
+      Este documento regula el uso de <strong>frentedigital.iunida.org</strong> y el tratamiento de
+      los datos personales que nos facilitas a través del formulario del Frente Digital.
     </p>
 
-    <h2>2. Qué datos recogemos</h2>
+    <nav class="prose__toc" aria-label="Contenido de esta página">
+      <p>En esta página</p>
+      <ol>
+        <li><a href="#responsable">Responsable del tratamiento</a></li>
+        <li><a href="#datos">Qué datos tratamos</a></li>
+        <li><a href="#finalidad">Para qué y con qué base legal</a></li>
+        <li><a href="#destinatarios">Destinatarios y transferencias</a></li>
+        <li><a href="#conservacion">Conservación</a></li>
+        <li><a href="#derechos">Tus derechos</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#terminos">Términos y condiciones de uso</a></li>
+        <li><a href="#propiedad">Propiedad intelectual e industrial</a></li>
+        <li><a href="#jurisdiccion">Legislación y jurisdicción</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="responsable">1. Responsable del tratamiento</h2>
     <p>
-      Nombre, correo electrónico, código postal y tu aceptación de esta política de privacidad.
-      No recogemos datos especialmente protegidos a través de este formulario.
+      El responsable es <strong>{SITE.legalEntity}</strong>, con CIF <strong>{SITE.legalCif}</strong>{' '}
+      y domicilio en <strong>{SITE.legalAddress}</strong>.
+    </p>
+    <p>
+      Para cuestiones legales puedes escribir a{' '}
+      <a href={`mailto:${SITE.legalEmail}`}>{SITE.legalEmail}</a>. Para cualquier otra consulta,
+      escríbenos a <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.
     </p>
 
-    <h2>3. Para qué los usamos</h2>
+    <h2 id="datos">2. Qué datos tratamos</h2>
+    <p>A través del formulario del Frente Digital recogemos:</p>
+    <ul>
+      <li>Tu nombre.</li>
+      <li>Tu correo electrónico.</li>
+      <li>Tu código postal.</li>
+      <li>La aceptación de esta política de privacidad.</li>
+    </ul>
+    <p>
+      No solicitamos datos especialmente protegidos. Si nos escribes por correo electrónico,
+      trataremos los datos que decidas incluir en tu mensaje.
+    </p>
+
+    <h2 id="finalidad">3. Para qué y con qué base legal</h2>
+    <p>Utilizamos tus datos para:</p>
     <ul>
       <li>Gestionar tu inscripción en el Frente Digital.</li>
       <li>Enviarte información, convocatorias y actividades de Izquierda Unida.</li>
-      <li>Ponerte en contacto contigo si es necesario para organizar alguna actividad.</li>
+      <li>Contactarte si es necesario para organizar una actividad.</li>
     </ul>
-
-    <h2>4. Base jurídica</h2>
     <p>
-      El tratamiento se basa en el consentimiento que nos das al marcar la casilla y enviar el
-      formulario. Puedes retirarlo en cualquier momento.
+      La base jurídica es tu <strong>consentimiento</strong> (artículo 6.1.a del Reglamento General
+      de Protección de Datos), que nos das al marcar la casilla y enviar el formulario. Puedes
+      retirarlo en cualquier momento. No elaboramos perfiles ni tomamos decisiones automatizadas
+      con tus datos.
     </p>
 
-    <h2>5. Quién trata los datos</h2>
+    <h2 id="destinatarios">4. Destinatarios y transferencias</h2>
     <p>
       Los datos se gestionan a través de <strong>Action Network</strong>, la plataforma que
-      utilizamos para los formularios y la lista de correo, como encargada del tratamiento. No
-      cedemos tus datos a terceros para fines publicitarios.
+      utilizamos para los formularios y la lista de correo, que actúa como encargada del
+      tratamiento. No cedemos tus datos a terceros para fines publicitarios.
     </p>
-
-    <h2>6. Cuánto tiempo los conservamos</h2>
     <p>
-      Mientras mantengas tu consentimiento y no solicites la baja. Si te das de baja, dejaremos de
-      enviarte comunicaciones y conservaremos únicamente la información necesaria para atender
-      posibles obligaciones legales.
+      Action Network es un proveedor externo y puede implicar transferencias internacionales de
+      datos. Puedes consultar su política de privacidad en{' '}
+      <a href={SITE.actionNetworkPrivacy} rel="noopener">actionnetwork.org/privacy</a>. No se prevén
+      otras cesiones salvo obligación legal.
     </p>
 
-    <h2>7. Tus derechos</h2>
+    <h2 id="conservacion">5. Conservación</h2>
+    <p>
+      Conservamos tus datos mientras mantengas tu consentimiento y no solicites la baja. Si te das
+      de baja, dejaremos de enviarte comunicaciones y conservaremos únicamente la información
+      necesaria para atender posibles obligaciones legales.
+    </p>
+
+    <h2 id="derechos">6. Tus derechos</h2>
     <p>
       Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y
       portabilidad escribiendo a{' '}
       <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>. También puedes presentar una
-      reclamación ante la Agencia Española de Protección de Datos.
+      reclamación ante la{' '}
+      <a href={SITE.aepd} rel="noopener">Agencia Española de Protección de Datos</a>.
     </p>
 
-    <h2>8. Más información</h2>
+    <h2 id="cookies">7. Cookies</h2>
     <p>
-      La política de privacidad completa de Izquierda Unida está disponible en{' '}
+      Esta web no utiliza cookies propias de analítica ni de publicidad. Las fuentes tipográficas
+      se sirven desde el propio sitio. El formulario envía los datos a Action Network, cuya política
+      de cookies y privacidad se aplica a ese servicio.
+    </p>
+
+    <h2 id="terminos">8. Términos y condiciones de uso</h2>
+    <p>
+      El acceso a este sitio te atribuye la condición de usuario y supone la aceptación de estas
+      condiciones. El usuario se compromete a utilizar la web conforme a la ley, la buena fe y el
+      orden público, y a no realizar actividades que puedan impedir, dañar o deteriorar su normal
+      funcionamiento o los derechos de terceros.
+    </p>
+    <p>
+      En particular, no está permitido introducir o difundir contenidos difamatorios, injuriosos,
+      obscenos, amenazantes, xenófobos, que inciten a la violencia o a la discriminación, ni
+      programas, virus o código susceptible de causar daños.
+    </p>
+    <p>
+      Izquierda Unida puede modificar o suspender el sitio y sus contenidos en cualquier momento.
+      La información se ofrece «tal cual»; no se garantiza que esté siempre actualizada o libre de
+      errores. En la medida permitida por la ley, el titular no responde de los daños derivados del
+      uso del sitio.
+    </p>
+    <p>
+      Los enlaces a sitios de terceros no implican que Izquierda Unida los apruebe, patrocine o
+      comparta sus contenidos. Quien enlace a este sitio debe hacerlo a su página principal y
+      respetar la legalidad vigente.
+    </p>
+
+    <h2 id="propiedad">9. Propiedad intelectual e industrial</h2>
+    <p>
+      La estructura, el diseño, los textos, gráficos, imágenes, logotipos y signos distintivos de
+      este sitio están protegidos por derechos de propiedad intelectual e industrial. No se permite
+      su reproducción, transformación, distribución, comunicación pública o cualquier otra forma de
+      explotación sin autorización expresa.
+    </p>
+    <p>
+      Izquierda Unida es una marca registrada. Su uso requiere autorización por escrito de sus
+      legítimos titulares.
+    </p>
+
+    <h2 id="jurisdiccion">10. Legislación y jurisdicción</h2>
+    <p>
+      Este aviso legal se rige por la legislación española. Los tribunales de Madrid tienen
+      jurisdicción exclusiva para resolver cualquier conflicto relacionado con el sitio, salvo que
+      la ley disponga otra cosa.
+    </p>
+
+    <h2 id="contacto">11. Contacto</h2>
+    <p>
+      Para cualquier duda sobre este aviso legal o sobre el tratamiento de tus datos:
+      <a href={`mailto:${SITE.legalEmail}`}>{SITE.legalEmail}</a> ·
+      <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.
+    </p>
+
+    <p class="prose__source">
+      Texto adaptado del{' '}
       <a href={SITE.officialPrivacy} rel="noopener">
-        izquierdaunida.org/aviso-legal-y-politica-de-privacidad
-      </a>.
+        aviso legal y política de privacidad de Izquierda Unida
+      </a>. El texto completo oficial prevalece sobre este resumen. © Izquierda Unida Federal.
     </p>
   </article>
 </Base>

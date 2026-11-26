@@ -29,5 +29,11 @@ export const SITE = {
   privacy: '/privacidad',
   officialPrivacy:
     'https://izquierdaunida.org/aviso-legal-y-politica-de-privacidad/',
+  legalEntity: 'Izquierda Unida Federal',
+  legalCif: 'G78269206',
+  legalAddress: 'Calle Villablanca, 53, 28032 Madrid',
+  legalEmail: 'legal@izquierdaunida.org',
+  aepd: 'https://www.aepd.es/',
+  actionNetworkPrivacy: 'https://actionnetwork.org/privacy/',
   contactEmail: 'info@izquierdaunida.org',
 } as const;
