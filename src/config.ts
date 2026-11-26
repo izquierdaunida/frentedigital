@@ -23,7 +23,7 @@ export const SITE = {
   organization: 'Izquierda Unida',
   url: 'https://frentedigital.iunida.org',
   description:
-    'Únete al Frente Digital de Izquierda Unida: una red para participar en convocatorias, movilizaciones y actividades cerca de ti.',
+    'Frente Digital de Izquierda Unida: una red para participar en convocatorias, movilizaciones y actividades cerca de ti.',
   whatsapp: 'https://whatsapp.com/channel/0029VaX63TcGZNCoRium7a3X',
   telegram: 'https://t.me/iunida',
   privacy: '/privacidad',
