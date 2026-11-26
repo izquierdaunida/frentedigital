@@ -43,7 +43,8 @@ public/logo-iu-blanco.png     Logo de la cabecera
 public/favicon-32x32.png      Favicon oficial de IU
 public/favicon-192x192.png    Favicon oficial de IU
 public/apple-touch-icon.png   Icono para iOS
-public/og-frente-digital.png  Imagen Open Graph / Telegram (1200 × 630)
+public/og-frente-digital.png  Imagen de marca para JSON-LD (1200 × 630)
+public/og-frente-digital-poster.jpg  Cartel para OG/Telegram (1080 × 1440, temporal)
 public/robots.txt             Reglas de rastreo y sitemap
 public/llms.txt               Resumen para motores generativos
 public/site.webmanifest       Manifiesto de la web
@@ -61,7 +62,8 @@ public/CNAME                  Dominio personalizado de GitHub Pages
 - Señales geográficas (`geo.region`, `geo.placename`, `geo.position`) y dirección de Madrid en el JSON-LD.
 - `public/llms.txt` con un resumen factual, enlaces oficiales y contacto para motores generativos.
 - Open Graph completo (`og:title`, `og:description`, `og:image`, `og:image:type`, dimensiones y alt) y Twitter Card.
-- Imagen de previsualización `og-frente-digital.png` de 1200 × 630, con el texto real de Frente Digital.
+- Imagen de previsualización social: cartel real `og-frente-digital-poster.jpg` de 1080 × 1440, usado temporalmente hasta tener la imagen definitiva.
+- La imagen de marca `og-frente-digital.png` (1200 × 630) se mantiene para el `logo` del JSON-LD.
 - `site.webmanifest`, iconos y `theme-color`.
 
 Telegram cachea las previsualizaciones por URL. Si después de publicar sigue mostrando una versión antigua, envía la URL a [@WebpageBot](https://t.me/WebpageBot) para forzar la actualización, o comparte un enlace con un parámetro de versión (`https://frentedigital.iunida.org/?v=2`) para ver la vista previa nueva.
