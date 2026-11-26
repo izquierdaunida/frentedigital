@@ -1,6 +1,8 @@
 ---
+import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { ACTION_NETWORK, SITE } from '../config';
+import fdiu from '../assets/fdiu.jpg';
 
 const title = 'Frente Digital · Izquierda Unida';
 const description = SITE.description;
@@ -14,11 +16,16 @@ const description = SITE.description;
     <div class="container page__grid">
       <section class="intro">
         <figure class="intro__media">
-          <img
-            src="/placeholder-1080x1440.svg"
-            alt="Espacio reservado para una imagen del Frente Digital, proporción 1080 por 1440"
-            width="1080"
-            height="1440"
+          <Picture
+            src={fdiu}
+            alt="Cartel del Frente Digital de Izquierda Unida: un puño levantado sobre fondo rojo con el lema «Contra el fascismo» y el texto «Frente Digital»."
+            formats={['webp']}
+            fallbackFormat="jpg"
+            widths={[480, 720, 1080]}
+            sizes="(max-width: 600px) calc(100vw - 2rem), (max-width: 900px) 640px, 480px"
+            quality={90}
+            loading="eager"
+            fetchpriority="high"
             decoding="async"
           />
         </figure>

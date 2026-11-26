@@ -135,6 +135,10 @@ input:focus-visible {
   margin: 0 0 2rem;
 }
 
+.intro__media picture {
+  display: block;
+}
+
 .intro__media img {
   width: 100%;
   height: auto;

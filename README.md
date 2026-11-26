@@ -9,7 +9,7 @@ Construida con [Astro](https://astro.build) y publicada en GitHub Pages.
 
 ## Qué incluye
 
-- Página principal con el texto de presentación y un placeholder de imagen 1080 × 1440.
+- Página principal con el texto de presentación y el cartel del Frente Digital (1080 × 1440, optimizado en WebP responsive).
 - Formulario con nombre, correo electrónico, código postal y consentimiento de privacidad.
 - Envío directo a Action Network mediante su API v2, sin exponer ninguna API key.
 - Página `/gracias` con llamadas a la Comunidad de WhatsApp y al canal de Telegram.
@@ -38,7 +38,7 @@ src/pages/gracias.astro       Página de agradecimiento
 src/pages/privacidad.astro    Aviso legal y privacidad
 src/pages/404.astro           Página de error 404
 src/styles/global.css         Estilos
-public/placeholder-1080x1440.svg  Placeholder de la imagen principal
+src/assets/fdiu.jpg           Cartel del Frente Digital (original)
 public/logo-iu-blanco.png     Logo de la cabecera
 public/favicon-32x32.png      Favicon oficial de IU
 public/favicon-192x192.png    Favicon oficial de IU
