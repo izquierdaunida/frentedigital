@@ -148,8 +148,8 @@ input:focus-visible {
 
 .intro__body {
   margin-top: 0;
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  font-size: 1.125rem;
+  line-height: 1.55;
 }
 
 .intro__body p {
@@ -163,7 +163,7 @@ input:focus-visible {
 /* Form */
 
 .form-block {
-  margin-top: 2.5rem;
+  margin-top: 1rem;
 }
 
 .field {
@@ -491,7 +491,7 @@ input:focus-visible {
   }
 
   .form-block {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 }
 
@@ -513,7 +513,7 @@ input:focus-visible {
   }
 
   .intro__body {
-    font-size: 1rem;
+    font-size: 1.0625rem;
   }
 
   .channels {
