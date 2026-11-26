@@ -1,0 +1,210 @@
+---
+const title = 'Frente Digital · Izquierda Unida';
+const description = 'El espacio digital de Izquierda Unida. Una web en construcción, hecha con Astro.';
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#d0021b" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://frentedigital.iunida.org/" />
+    <meta property="og:locale" content="es_ES" />
+    <style>
+      :root {
+        --rojo: #d0021b;
+        --rojo-oscuro: #9d0014;
+        --crema: #f4eee4;
+        --tinta: #191411;
+        --gris: #6b6058;
+        --linea: rgba(25, 20, 17, 0.14);
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body { margin: 0; min-height: 100%; }
+
+      body {
+        background: var(--crema);
+        color: var(--tinta);
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100svh;
+        background-image:
+          linear-gradient(var(--linea) 1px, transparent 1px),
+          linear-gradient(90deg, var(--linea) 1px, transparent 1px);
+        background-size: 48px 48px;
+        background-position: -1px -1px;
+      }
+
+      a { color: inherit; }
+
+      .barra {
+        background: var(--rojo);
+        color: #fff;
+        padding: 0.85rem clamp(1.25rem, 5vw, 4rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .barra strong { font-weight: 700; }
+
+      .barra span { opacity: 0.85; }
+
+      main {
+        display: grid;
+        place-items: center;
+        padding: clamp(2rem, 6vw, 5rem) clamp(1.25rem, 5vw, 4rem);
+      }
+
+      .tarjeta {
+        width: min(100%, 880px);
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid var(--linea);
+        box-shadow: 0 24px 60px rgba(25, 20, 17, 0.08);
+        padding: clamp(2rem, 6vw, 4.5rem);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tarjeta::after {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: var(--rojo);
+        opacity: 0.1;
+        right: -60px;
+        top: -60px;
+      }
+
+      .ojo {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--rojo-oscuro);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .ojo::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        background: var(--rojo);
+        border-radius: 50%;
+      }
+
+      h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 400;
+        font-size: clamp(3.4rem, 11vw, 7.5rem);
+        line-height: 0.9;
+        letter-spacing: -0.055em;
+        margin: 0 0 1.5rem;
+      }
+
+      h1 em {
+        font-style: italic;
+        color: var(--rojo);
+      }
+
+      .entradilla {
+        font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+        max-width: 34ch;
+        color: var(--gris);
+        margin: 0 0 2.5rem;
+      }
+
+      .acciones {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .boton {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: var(--rojo);
+        color: #fff;
+        text-decoration: none;
+        padding: 0.95rem 1.35rem;
+        font-weight: 700;
+        font-size: 0.95rem;
+        border: 1px solid var(--rojo);
+        transition: background 160ms ease, transform 160ms ease;
+      }
+
+      .boton:hover { background: var(--rojo-oscuro); border-color: var(--rojo-oscuro); transform: translateY(-1px); }
+
+      .enlace {
+        font-size: 0.9rem;
+        color: var(--gris);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      footer {
+        padding: 1.25rem clamp(1.25rem, 5vw, 4rem);
+        border-top: 1px solid var(--linea);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.75rem;
+        font-size: 0.78rem;
+        color: var(--gris);
+      }
+
+      footer a { text-decoration: none; border-bottom: 1px solid currentColor; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .boton { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="barra">
+      <strong>Izquierda Unida</strong>
+      <span>Frente Digital</span>
+    </header>
+
+    <main>
+      <section class="tarjeta" aria-labelledby="titulo">
+        <p class="ojo">Web en construcción</p>
+        <h1 id="titulo">Hello <em>world</em>.</h1>
+        <p class="entradilla">
+          Estamos poniendo en marcha el espacio digital de Izquierda Unida.
+          Muy pronto, aquí: organización, participación y política útil.
+        </p>
+        <div class="acciones">
+          <a class="boton" href="https://izquierdaunida.org">Volver a iunida.org</a>
+          <a class="enlace" href="https://militancia.izquierdaunida.org/alta_afiliado">Afíliate</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© {new Date().getFullYear()} Izquierda Unida</span>
+      <span>Hecho con <a href="https://astro.build">Astro</a> · <a href="https://frentedigital.iunida.org">frentedigital.iunida.org</a></span>
+    </footer>
+  </body>
+</html>
