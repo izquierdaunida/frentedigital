@@ -1,210 +1,226 @@
 ---
-const title = 'Frente Digital · Izquierda Unida';
-const description = 'El espacio digital de Izquierda Unida. Una web en construcción, hecha con Astro.';
+import Base from '../layouts/Base.astro';
+import { ACTION_NETWORK, SITE } from '../config';
+
+const title = 'Únete al Frente Digital de Izquierda Unida';
+const description = SITE.description;
 ---
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="theme-color" content="#d0021b" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://frentedigital.iunida.org/" />
-    <meta property="og:locale" content="es_ES" />
-    <style>
-      :root {
-        --rojo: #d0021b;
-        --rojo-oscuro: #9d0014;
-        --crema: #f4eee4;
-        --tinta: #191411;
-        --gris: #6b6058;
-        --linea: rgba(25, 20, 17, 0.14);
-      }
 
-      * { box-sizing: border-box; }
-
-      html, body { margin: 0; min-height: 100%; }
-
-      body {
-        background: var(--crema);
-        color: var(--tinta);
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        line-height: 1.5;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        min-height: 100svh;
-        background-image:
-          linear-gradient(var(--linea) 1px, transparent 1px),
-          linear-gradient(90deg, var(--linea) 1px, transparent 1px);
-        background-size: 48px 48px;
-        background-position: -1px -1px;
-      }
-
-      a { color: inherit; }
-
-      .barra {
-        background: var(--rojo);
-        color: #fff;
-        padding: 0.85rem clamp(1.25rem, 5vw, 4rem);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        font-size: 0.78rem;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-      }
-
-      .barra strong { font-weight: 700; }
-
-      .barra span { opacity: 0.85; }
-
-      main {
-        display: grid;
-        place-items: center;
-        padding: clamp(2rem, 6vw, 5rem) clamp(1.25rem, 5vw, 4rem);
-      }
-
-      .tarjeta {
-        width: min(100%, 880px);
-        background: rgba(255, 255, 255, 0.55);
-        border: 1px solid var(--linea);
-        box-shadow: 0 24px 60px rgba(25, 20, 17, 0.08);
-        padding: clamp(2rem, 6vw, 4.5rem);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .tarjeta::after {
-        content: "";
-        position: absolute;
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        background: var(--rojo);
-        opacity: 0.1;
-        right: -60px;
-        top: -60px;
-      }
-
-      .ojo {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        font-size: 0.72rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--rojo-oscuro);
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-      }
-
-      .ojo::before {
-        content: "";
-        width: 9px;
-        height: 9px;
-        background: var(--rojo);
-        border-radius: 50%;
-      }
-
-      h1 {
-        font-family: Georgia, "Times New Roman", serif;
-        font-weight: 400;
-        font-size: clamp(3.4rem, 11vw, 7.5rem);
-        line-height: 0.9;
-        letter-spacing: -0.055em;
-        margin: 0 0 1.5rem;
-      }
-
-      h1 em {
-        font-style: italic;
-        color: var(--rojo);
-      }
-
-      .entradilla {
-        font-size: clamp(1.05rem, 2.2vw, 1.35rem);
-        max-width: 34ch;
-        color: var(--gris);
-        margin: 0 0 2.5rem;
-      }
-
-      .acciones {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .boton {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        background: var(--rojo);
-        color: #fff;
-        text-decoration: none;
-        padding: 0.95rem 1.35rem;
-        font-weight: 700;
-        font-size: 0.95rem;
-        border: 1px solid var(--rojo);
-        transition: background 160ms ease, transform 160ms ease;
-      }
-
-      .boton:hover { background: var(--rojo-oscuro); border-color: var(--rojo-oscuro); transform: translateY(-1px); }
-
-      .enlace {
-        font-size: 0.9rem;
-        color: var(--gris);
-        text-decoration: underline;
-        text-underline-offset: 4px;
-      }
-
-      footer {
-        padding: 1.25rem clamp(1.25rem, 5vw, 4rem);
-        border-top: 1px solid var(--linea);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 0.75rem;
-        font-size: 0.78rem;
-        color: var(--gris);
-      }
-
-      footer a { text-decoration: none; border-bottom: 1px solid currentColor; }
-
-      @media (prefers-reduced-motion: reduce) {
-        .boton { transition: none; }
-      }
-    </style>
-  </head>
-  <body>
-    <header class="barra">
-      <strong>Izquierda Unida</strong>
-      <span>Frente Digital</span>
-    </header>
-
-    <main>
-      <section class="tarjeta" aria-labelledby="titulo">
-        <p class="ojo">Web en construcción</p>
-        <h1 id="titulo">Hello <em>world</em>.</h1>
-        <p class="entradilla">
-          Estamos poniendo en marcha el espacio digital de Izquierda Unida.
-          Muy pronto, aquí: organización, participación y política útil.
-        </p>
-        <div class="acciones">
-          <a class="boton" href="https://izquierdaunida.org">Volver a iunida.org</a>
-          <a class="enlace" href="https://militancia.izquierdaunida.org/alta_afiliado">Afíliate</a>
+<Base title={title} description={description}>
+  <div class="page">
+    <div class="container page__grid">
+      <section class="intro" aria-labelledby="intro-title">
+        <h1 id="intro-title">Únete al Frente Digital de Izquierda Unida</h1>
+        <div class="intro__body">
+          <p class="intro__lead">Hay pequeñas acciones que construyen grandes cambios.</p>
+          <p>
+            Presentamos el <strong>Frente Digital de Izquierda Unida</strong>, una red que nos
+            conecta con convocatorias locales, movilizaciones y actividades que nos unen y nos
+            acercan a nuestros objetivos: una sociedad más feminista, más solidaria y que ponga en
+            el centro a la clase trabajadora.
+          </p>
+          <p>
+            Si tienes ganas de participar y aportar un poco de tu tiempo, pero no puedes
+            comprometerte a una militancia más exigente, <strong>te lo ponemos fácil</strong>.
+          </p>
+          <p>
+            En la práctica, es una lista de correo activa en la que
+            <strong>tú decides cuándo sumarte</strong>.
+          </p>
+          <p>
+            Además, este formulario también te inscribe en <strong>Activistas</strong>, la web de
+            Izquierda Unida que te informa sobre <strong>actividades locales</strong> en tu
+            territorio: reparto de panfletos, mesas informativas, talleres de pancartas,
+            manifestaciones, formaciones, comidas populares y mucho más.
+          </p>
+          <p>
+            No hace falta que te apuntes a todo ni que estés conectada todo el día.
+            <strong>Tú eliges cuándo, cómo y en qué.</strong> Desde casa o en la calle, junto a tus
+            compañeras más cercanas. Cuanta más gente estemos en esta red, más lejos llegarán
+            nuestras campañas.
+          </p>
         </div>
       </section>
-    </main>
 
-    <footer>
-      <span>© {new Date().getFullYear()} Izquierda Unida</span>
-      <span>Hecho con <a href="https://astro.build">Astro</a> · <a href="https://frentedigital.iunida.org">frentedigital.iunida.org</a></span>
-    </footer>
-  </body>
-</html>
+      <section class="form-card" aria-labelledby="form-title">
+        <p class="form-card__eyebrow">Frente Digital</p>
+        <h2 id="form-title">Apúntate</h2>
+
+        <form
+          id="frente-digital-form"
+          method="get"
+          action={ACTION_NETWORK.publicFormUrl}
+          data-endpoint={ACTION_NETWORK.submitUrl}
+          data-success="/gracias"
+        >
+          <div class="field">
+            <label class="sr-only" for="first_name">Nombre</label>
+            <input
+              id="first_name"
+              name="first_name"
+              type="text"
+              placeholder="Nombre"
+              autocomplete="given-name"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label class="sr-only" for="email">Correo electrónico</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Correo electrónico *"
+              autocomplete="email"
+              inputmode="email"
+              autocapitalize="none"
+              spellcheck="false"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label class="sr-only" for="zip_code">Código postal</label>
+            <input
+              id="zip_code"
+              name="zip_code"
+              type="text"
+              placeholder="Código postal *"
+              autocomplete="postal-code"
+              inputmode="numeric"
+              maxlength="10"
+              required
+            />
+          </div>
+
+          <label class="consent" for="GDPR2">
+            <input id="GDPR2" name="GDPR2" type="checkbox" value="1" required />
+            <span>
+              He leído y acepto la{' '}
+              <a href={SITE.privacy} target="_blank" rel="noopener">política de privacidad</a>.
+            </span>
+          </label>
+
+          <button class="btn-submit" type="submit">
+            ¡Quiero unirme al Frente Digital de IU!
+          </button>
+
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+
+          <p class="form-note">
+            Al enviar el formulario aceptas que Izquierda Unida trate tus datos para gestionar tu
+            participación en el Frente Digital y enviarte información. Puedes darte de baja cuando
+            quieras. Más información en la <a href={SITE.privacy}>política de privacidad</a>.
+          </p>
+
+          <noscript>
+            <p class="form-note">
+              Para enviar el formulario necesitas JavaScript. También puedes{' '}
+              <a href={ACTION_NETWORK.publicFormUrl}>hacerlo en Action Network</a>.
+            </p>
+          </noscript>
+        </form>
+      </section>
+    </div>
+  </div>
+</Base>
+
+<script>
+  const form = document.getElementById('frente-digital-form');
+  const status = document.getElementById('form-status');
+
+  if (form instanceof HTMLFormElement && status instanceof HTMLElement) {
+    const endpoint = form.dataset.endpoint;
+    const successUrl = form.dataset.success || '/gracias';
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    const clearStatus = () => {
+      status.textContent = '';
+      status.classList.remove('is-error');
+    };
+
+    const showError = (message) => {
+      status.textContent = message;
+      status.classList.add('is-error');
+
+      const fallback = document.createElement('a');
+      fallback.href = 'https://actionnetwork.org/forms/frente-digital-iu';
+      fallback.target = '_blank';
+      fallback.rel = 'noopener';
+      fallback.textContent = 'Abrir el formulario original';
+      status.append(' ', fallback);
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      clearStatus();
+
+      if (!form.reportValidity()) return;
+
+      if (!endpoint) {
+        showError('El formulario no está configurado correctamente. Inténtalo más tarde.');
+        return;
+      }
+
+      const data = new FormData(form);
+      const firstName = String(data.get('first_name') || '').trim();
+      const email = String(data.get('email') || '').trim();
+      const zipCode = String(data.get('zip_code') || '').trim();
+      const gdprAccepted = data.get('GDPR2') === '1';
+
+      if (!firstName || !email || !zipCode || !gdprAccepted) {
+        showError('Revisa los campos obligatorios y acepta la política de privacidad.');
+        return;
+      }
+
+      const payload = {
+        person: {
+          given_name: firstName,
+          email_addresses: [{ address: email, status: 'subscribed' }],
+          postal_addresses: [{ postal_code: zipCode, country: 'ES' }],
+          custom_fields: { GDPR2: '1' },
+        },
+        'action_network:referrer_data': { source: 'frentedigital' },
+        triggers: {
+          autoresponse: { enabled: true },
+        },
+      };
+
+      const originalLabel = submitButton?.textContent || '';
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Enviando…';
+      }
+      form.setAttribute('aria-busy', 'true');
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Action Network respondió ${response.status}`);
+        }
+
+        window.location.assign(successUrl);
+      } catch (error) {
+        console.error('No se pudo enviar el formulario a Action Network', error);
+        showError(
+          'No hemos podido enviar el formulario. Inténtalo de nuevo en unos segundos o'
+        );
+      } finally {
+        if (submitButton instanceof HTMLButtonElement) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalLabel;
+        }
+        form.removeAttribute('aria-busy');
+      }
+    });
+  }
+</script>

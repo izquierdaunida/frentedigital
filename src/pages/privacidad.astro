@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config';
+
+const title = 'Política de privacidad · Frente Digital';
+const description =
+  'Información sobre el tratamiento de datos personales en el formulario del Frente Digital de Izquierda Unida.';
+---
+
+<Base title={title} description={description} noindex>
+  <article class="container prose">
+    <h1>Política de privacidad</h1>
+    <p class="prose__updated">Última actualización: noviembre de 2026</p>
+
+    <p>
+      Este formulario recoge los datos que nos facilitas para que puedas formar parte del
+      <strong>Frente Digital de Izquierda Unida</strong>. Aquí tienes un resumen claro de cómo los
+      tratamos.
+    </p>
+
+    <h2>1. Responsable del tratamiento</h2>
+    <p>
+      <strong>Izquierda Unida</strong>. Puedes contactar con nosotros en
+      <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.
+    </p>
+
+    <h2>2. Qué datos recogemos</h2>
+    <p>
+      Nombre, correo electrónico, código postal y tu aceptación de esta política de privacidad.
+      No recogemos datos especialmente protegidos a través de este formulario.
+    </p>
+
+    <h2>3. Para qué los usamos</h2>
+    <ul>
+      <li>Gestionar tu inscripción en el Frente Digital.</li>
+      <li>Enviarte información, convocatorias y actividades de Izquierda Unida.</li>
+      <li>Ponerte en contacto contigo si es necesario para organizar alguna actividad.</li>
+    </ul>
+
+    <h2>4. Base jurídica</h2>
+    <p>
+      El tratamiento se basa en el consentimiento que nos das al marcar la casilla y enviar el
+      formulario. Puedes retirarlo en cualquier momento.
+    </p>
+
+    <h2>5. Quién trata los datos</h2>
+    <p>
+      Los datos se gestionan a través de <strong>Action Network</strong>, la plataforma que
+      utilizamos para los formularios y la lista de correo, como encargada del tratamiento. No
+      cedemos tus datos a terceros para fines publicitarios.
+    </p>
+
+    <h2>6. Cuánto tiempo los conservamos</h2>
+    <p>
+      Mientras mantengas tu consentimiento y no solicites la baja. Si te das de baja, dejaremos de
+      enviarte comunicaciones y conservaremos únicamente la información necesaria para atender
+      posibles obligaciones legales.
+    </p>
+
+    <h2>7. Tus derechos</h2>
+    <p>
+      Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y
+      portabilidad escribiendo a
+      <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>. También puedes presentar una
+      reclamación ante la Agencia Española de Protección de Datos.
+    </p>
+
+    <h2>8. Más información</h2>
+    <p>
+      La política de privacidad completa de Izquierda Unida está disponible en
+      <a href={SITE.officialPrivacy} rel="noopener">
+        izquierdaunida.org/aviso-legal-y-politica-de-privacidad
+      </a>.
+    </p>
+  </article>
+</Base>
