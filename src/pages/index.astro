@@ -2,24 +2,23 @@
 import Base from '../layouts/Base.astro';
 import { ACTION_NETWORK, SITE } from '../config';
 
-const title = 'Únete al Frente Digital de Izquierda Unida';
+const title = 'Frente Digital · Izquierda Unida';
 const description = SITE.description;
 ---
 
 <Base title={title} description={description}>
   <div class="page">
     <div class="container page__grid">
-      <section class="intro" aria-labelledby="intro-title">
+      <section class="intro">
         <figure class="intro__media">
           <img
-            src="/placeholder-1440x1080.svg"
-            alt="Espacio reservado para una imagen del Frente Digital, proporción 1440 por 1080"
-            width="1440"
-            height="1080"
+            src="/placeholder-1080x1440.svg"
+            alt="Espacio reservado para una imagen del Frente Digital, proporción 1080 por 1440"
+            width="1080"
+            height="1440"
             decoding="async"
           />
         </figure>
-        <h1 id="intro-title">Únete al Frente Digital de Izquierda Unida</h1>
         <div class="intro__body">
           <p class="intro__lead">Hay pequeñas acciones que construyen grandes cambios.</p>
           <p>
@@ -53,7 +52,7 @@ const description = SITE.description;
 
       <section class="form-card" aria-labelledby="form-title">
         <p class="form-card__eyebrow">Frente Digital</p>
-        <h2 id="form-title">Apúntate</h2>
+        <h1 id="form-title" class="form-card__title">Apúntate</h1>
 
         <form
           id="frente-digital-form"

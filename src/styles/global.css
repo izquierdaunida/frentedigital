@@ -141,19 +141,8 @@ input:focus-visible {
   border: 1px solid var(--line);
 }
 
-.intro h1 {
-  margin: 0;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--line);
-  color: var(--ink);
-  font-size: clamp(2rem, 3.4vw, 2.55rem);
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.12;
-}
-
 .intro__body {
-  margin-top: 2rem;
+  margin-top: 0;
   font-size: 1.0625rem;
   line-height: 1.65;
 }
@@ -191,7 +180,7 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
-.form-card h2 {
+.form-card__title {
   margin: 0 0 1.5rem;
   color: var(--ink);
   font-size: 1.4rem;
@@ -201,7 +190,7 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
-.form-card h2::after {
+.form-card__title::after {
   content: '';
   display: block;
   width: 190px;
@@ -557,8 +546,8 @@ input:focus-visible {
     padding: 36px 0 48px;
   }
 
-  .intro h1 {
-    font-size: clamp(1.9rem, 7vw, 2.35rem);
+  .intro__media {
+    margin-bottom: 1.5rem;
   }
 
   .intro__body {

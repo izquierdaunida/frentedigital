@@ -9,7 +9,7 @@ Construida con [Astro](https://astro.build) y publicada en GitHub Pages.
 
 ## Qué incluye
 
-- Página principal con el texto de presentación y un placeholder de imagen 1440 × 1080.
+- Página principal con el texto de presentación y un placeholder de imagen 1080 × 1440.
 - Formulario con nombre, correo electrónico, código postal y consentimiento de privacidad.
 - Envío directo a Action Network mediante su API v2, sin exponer ninguna API key.
 - Página `/gracias` con llamadas a la Comunidad de WhatsApp y al canal de Telegram.
@@ -37,7 +37,7 @@ src/pages/index.astro         Landing y formulario
 src/pages/gracias.astro       Página de agradecimiento
 src/pages/privacidad.astro    Aviso legal y privacidad
 src/styles/global.css         Estilos
-public/placeholder-1440x1080.svg  Placeholder de la imagen principal
+public/placeholder-1080x1440.svg  Placeholder de la imagen principal
 public/logo-iu-blanco.png     Logo de la cabecera
 public/favicon-32x32.png      Favicon oficial de IU
 public/favicon-192x192.png    Favicon oficial de IU

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1440" width="1080" height="1440" role="img" aria-labelledby="titulo">
+  <title id="titulo">Espacio reservado para una imagen de 1080 por 1440</title>
+  <rect width="1080" height="1440" fill="#f4eee4"/>
+  <path d="M0 1440L1080 0V1440H0Z" fill="#df0022" opacity=".06"/>
+  <path d="M0 0H1080V1440H0V0Z" fill="none" stroke="#df0022" stroke-opacity=".28" stroke-width="3" stroke-dasharray="16 14"/>
+  <g fill="#df0022">
+    <rect x="460" y="906" width="160" height="4"/>
+  </g>
+  <text x="540" y="628" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="40" letter-spacing="6" fill="#8a7f74">ESPACIO PARA LA IMAGEN</text>
+  <text x="540" y="790" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="110" letter-spacing="-2" fill="#2f2f2f">1080 × 1440</text>
+  <text x="540" y="864" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="32" fill="#6b6058">Frente Digital · Izquierda Unida</text>
+</svg>
