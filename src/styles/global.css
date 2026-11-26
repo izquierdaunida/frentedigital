@@ -160,12 +160,6 @@ input:focus-visible {
   margin-bottom: 0;
 }
 
-.intro__lead {
-  color: var(--ink-strong);
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-
 /* Form */
 
 .form-block {
