@@ -1,0 +1,31 @@
+# Frente Digital · Izquierda Unida
+
+> Frente Digital es el espacio de participación digital de Izquierda Unida. Una red para recibir convocatorias, movilizaciones y actividades cerca de ti y para implicarte en la organización sin comprometerte a una militancia más exigente.
+
+## Qué es
+
+El Frente Digital de Izquierda Unida es una lista de correo activa y un espacio de participación. Al apuntarte, pasas a formar parte de una red que conecta a personas interesadas con las actividades locales de Izquierda Unida: reparto de panfletos, mesas informativas, talleres, manifestaciones, formaciones y encuentros.
+
+También te inscribe en Activistas, la web de Izquierda Unida que informa sobre actividades en tu territorio. Tú decides cuándo, cómo y en qué participar.
+
+## Cómo participar
+
+- Formulario de alta: https://frentedigital.iunida.org/
+- Afiliación a Izquierda Unida: https://militancia.izquierdaunida.org/alta_afiliado
+- Comunidad de WhatsApp: https://whatsapp.com/channel/0029VaX63TcGZNCoRium7a3X
+- Canal de Telegram: https://t.me/iunida
+
+## Enlaces oficiales
+
+- Web de Izquierda Unida: https://izquierdaunida.org
+- Aviso legal y privacidad: https://izquierdaunida.org/aviso-legal-y-politica-de-privacidad/
+- Política de privacidad de este sitio: https://frentedigital.iunida.org/privacidad/
+- Repositorio: https://github.com/izquierdaunida/frentedigital
+
+## Contacto
+
+- Información general: info@izquierdaunida.org
+- Cuestiones legales: legal@izquierdaunida.org
+- Dirección: Calle Villablanca, 53, 28032 Madrid, España
+
+Última actualización: 26 de noviembre de 2026.

@@ -36,16 +36,35 @@ src/components/Footer.astro   Pie
 src/pages/index.astro         Landing y formulario
 src/pages/gracias.astro       Página de agradecimiento
 src/pages/privacidad.astro    Aviso legal y privacidad
+src/pages/404.astro           Página de error 404
 src/styles/global.css         Estilos
 public/placeholder-1080x1440.svg  Placeholder de la imagen principal
 public/logo-iu-blanco.png     Logo de la cabecera
 public/favicon-32x32.png      Favicon oficial de IU
 public/favicon-192x192.png    Favicon oficial de IU
 public/apple-touch-icon.png   Icono para iOS
-public/og.jpg                 Imagen para redes sociales
+public/og-frente-digital.png  Imagen Open Graph / Telegram (1200 × 630)
+public/robots.txt             Reglas de rastreo y sitemap
+public/llms.txt               Resumen para motores generativos
+public/site.webmanifest       Manifiesto de la web
 public/CNAME                  Dominio personalizado de GitHub Pages
 .github/workflows/deploy.yml  Despliegue automático a GitHub Pages
 ```
+
+## SEO, GEO y previsualizaciones
+
+- Título, meta description, canonical y `hreflang` (`es`, `es-ES`, `x-default`).
+- `robots` con `max-image-preview:large` en la home; `noindex` en `/gracias`, `/privacidad` y `/404`.
+- Sitemap generado con `@astrojs/sitemap` en `/sitemap-index.xml`; solo incluye la home.
+- `public/robots.txt` apunta al sitemap.
+- Datos estructurados JSON-LD: `PoliticalParty`, `WebSite` y `WebPage`, con dirección, área servida, perfiles sociales y `sameAs`.
+- Señales geográficas (`geo.region`, `geo.placename`, `geo.position`) y dirección de Madrid en el JSON-LD.
+- `public/llms.txt` con un resumen factual, enlaces oficiales y contacto para motores generativos.
+- Open Graph completo (`og:title`, `og:description`, `og:image`, `og:image:type`, dimensiones y alt) y Twitter Card.
+- Imagen de previsualización `og-frente-digital.png` de 1200 × 630, con el texto real de Frente Digital.
+- `site.webmanifest`, iconos y `theme-color`.
+
+Telegram cachea las previsualizaciones por URL. Si después de publicar sigue mostrando una versión antigua, envía la URL a [@WebpageBot](https://t.me/WebpageBot) para forzar la actualización, o comparte un enlace con un parámetro de versión (`https://frentedigital.iunida.org/?v=2`) para ver la vista previa nueva.
 
 ## Action Network
 

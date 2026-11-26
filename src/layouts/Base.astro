@@ -14,7 +14,100 @@ interface Props {
 const { title, description = SITE.description, noindex = false } = Astro.props;
 const site = Astro.site ?? new URL(SITE.url);
 const canonical = new URL(Astro.url.pathname, site);
-const ogImage = new URL('/og.jpg', site);
+const ogImage = new URL('/og-frente-digital.png', site);
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+
+const socialProfiles = [
+  'https://www.facebook.com/izquierda.unida',
+  'https://x.com/IzquierdaUnida',
+  'https://www.instagram.com/izquierda_unida/',
+  'https://t.me/iunida',
+  'https://www.youtube.com/IzquierdaUnida',
+  'https://mastodon.social/@izquierda_unida',
+  'https://github.com/izquierdaunida',
+];
+
+const organizationId = 'https://izquierdaunida.org/#organization';
+const websiteId = `${SITE.url}/#website`;
+const webpageId = `${canonical.href}#webpage`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'PoliticalParty',
+      '@id': organizationId,
+      name: 'Izquierda Unida',
+      alternateName: 'IU',
+      url: 'https://izquierdaunida.org',
+      logo: {
+        '@type': 'ImageObject',
+        url: ogImage.href,
+        width: 1200,
+        height: 630,
+      },
+      image: ogImage.href,
+      description: 'Partido político español. Por tu país, por tu futuro, por tu dignidad.',
+      slogan: 'Por tu país, por tu futuro, por tu dignidad.',
+      email: SITE.contactEmail,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Calle Villablanca, 53',
+        addressLocality: 'Madrid',
+        postalCode: '28032',
+        addressCountry: 'ES',
+      },
+      areaServed: {
+        '@type': 'Country',
+        name: 'España',
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        email: SITE.contactEmail,
+        areaServed: 'ES',
+        availableLanguage: ['es'],
+      },
+      sameAs: socialProfiles,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': websiteId,
+      url: `${SITE.url}/`,
+      name: 'Frente Digital',
+      alternateName: 'Frente Digital de Izquierda Unida',
+      description: SITE.description,
+      publisher: { '@id': organizationId },
+      inLanguage: 'es-ES',
+    },
+    {
+      '@type': 'WebPage',
+      '@id': webpageId,
+      url: canonical.href,
+      name: title,
+      description,
+      isPartOf: { '@id': websiteId },
+      about: { '@id': organizationId },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: ogImage.href,
+        width: 1200,
+        height: 630,
+      },
+      inLanguage: 'es-ES',
+      ...(isHome
+        ? {
+            datePublished: '2026-11-26',
+            dateModified: '2026-11-26',
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['.intro__lead', '.intro__body'],
+            },
+          }
+        : {}),
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -24,30 +117,59 @@ const ogImage = new URL('/og.jpg', site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content={noindex
+        ? 'noindex, nofollow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
+    />
+    <meta name="author" content="Izquierda Unida" />
+    <meta name="application-name" content="Frente Digital" />
+    <meta name="apple-mobile-web-app-title" content="Frente Digital" />
+    <meta name="color-scheme" content="light" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="theme-color" content="#df0022" />
     <link rel="canonical" href={canonical.href} />
+    <link rel="alternate" hreflang="es" href={canonical.href} />
+    <link rel="alternate" hreflang="es-ES" href={canonical.href} />
+    <link rel="alternate" hreflang="x-default" href={canonical.href} />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="theme-color" content="#df0022" />
-    <meta name="author" content="Izquierda Unida" />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://actionnetwork.org" crossorigin />
+    <link rel="me" href="https://mastodon.social/@izquierda_unida" />
+
+    {isHome && (
+      <>
+        <meta name="geo.region" content="ES-MD" />
+        <meta name="geo.placename" content="Madrid" />
+        <meta name="geo.position" content="40.4168;-3.7038" />
+      </>
+    )}
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Frente Digital · Izquierda Unida" />
+    <meta property="og:site_name" content="Frente Digital" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical.href} />
     <meta property="og:image" content={ogImage.href} />
+    <meta property="og:image:secure_url" content={ogImage.href} />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Izquierda Unida" />
+    <meta property="og:image:alt" content="Frente Digital · Izquierda Unida" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@IzquierdaUnida" />
+    <meta name="twitter:creator" content="@IzquierdaUnida" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage.href} />
+    <meta name="twitter:image:alt" content="Frente Digital · Izquierda Unida" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>

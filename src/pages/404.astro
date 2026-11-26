@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Página no encontrada · Frente Digital';
+const description = 'La página que buscas no existe o ha cambiado de sitio.';
+---
+
+<Base title={title} description={description} noindex>
+  <section class="thanks">
+    <div class="container thanks__inner">
+      <p class="thanks__eyebrow">Error 404</p>
+      <h1>Página no encontrada</h1>
+      <p class="thanks__lead">
+        La página que buscas no existe o ha cambiado de sitio. Puedes volver al inicio o ir
+        directamente al formulario del Frente Digital.
+      </p>
+      <p>
+        <a class="thanks__back" href="/">Volver al inicio</a>
+        {' · '}
+        <a class="thanks__back" href="/#frente-digital-form">Ir al formulario</a>
+      </p>
+    </div>
+  </section>
+</Base>
