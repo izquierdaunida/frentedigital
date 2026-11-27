@@ -30,8 +30,7 @@ npm run preview  # sirve dist/
 
 ```text
 src/config.ts                 IDs y URLs de Action Network / redes
-src/layouts/Base.astro        Cabecera, SEO y pie comunes
-src/components/Header.astro   Logo blanco de IU sobre rojo
+src/layouts/Base.astro        Estructura, SEO y pie comunes
 src/components/Footer.astro   Pie
 src/pages/index.astro         Landing y formulario
 src/pages/gracias.astro       Página de agradecimiento
@@ -39,7 +38,6 @@ src/pages/privacidad.astro    Aviso legal y privacidad
 src/pages/404.astro           Página de error 404
 src/styles/global.css         Estilos
 src/assets/fdiu.jpg           Cartel del Frente Digital (original)
-public/logo-iu-blanco.png     Logo de la cabecera
 public/favicon-32x32.png      Favicon oficial de IU
 public/favicon-192x192.png    Favicon oficial de IU
 public/apple-touch-icon.png   Icono para iOS
