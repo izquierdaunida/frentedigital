@@ -564,6 +564,18 @@ input:focus-visible {
     width: min(100% - 2rem, 1160px);
   }
 
+  .intro__media {
+    height: auto;
+    min-height: 0;
+    padding: 0.5rem;
+  }
+
+  .intro__media img {
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+  }
+
   .wa-share {
     padding: 1rem 1.1rem;
   }
