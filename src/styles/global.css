@@ -289,11 +289,12 @@ input:focus-visible {
 
 .content__site-link {
   position: absolute;
-  left: 2rem;
+  right: 2rem;
   bottom: 1.5rem;
   margin: 0;
   color: var(--muted);
   font-size: 0.8125rem;
+  text-align: right;
 }
 
 .content__site-link a {
