@@ -118,7 +118,7 @@ input:focus-visible {
   top: 0;
   align-self: start;
   display: grid;
-  place-items: start end;
+  place-items: center end;
   width: 100%;
   height: 100svh;
   margin: 0;
@@ -134,8 +134,8 @@ input:focus-visible {
 
 .intro__media img {
   width: auto;
-  max-width: min(84%, 560px);
-  max-height: 80svh;
+  max-width: min(100%, 700px);
+  max-height: 88svh;
   height: auto;
   border: 0;
   box-shadow: none;
@@ -144,7 +144,7 @@ input:focus-visible {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   max-width: 680px;
   min-height: 100svh;
@@ -157,6 +157,11 @@ input:focus-visible {
   margin-top: 0;
   font-size: 1.2rem;
   line-height: 1.6rem;
+}
+
+.intro__body p:first-child {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .intro__body p {
