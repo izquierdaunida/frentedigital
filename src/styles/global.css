@@ -155,8 +155,8 @@ input:focus-visible {
 
 .intro__body {
   margin-top: 0;
-  font-size: 1.125rem;
-  line-height: 1.55;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
 }
 
 .intro__body p {
@@ -186,7 +186,7 @@ input:focus-visible {
   border-radius: 0;
   background: #fff;
   color: #333;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .field input::placeholder {
@@ -233,7 +233,7 @@ input:focus-visible {
   border-radius: 6px;
   background: var(--iu-red);
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: 700;
   line-height: 1.25;
   cursor: pointer;
@@ -527,10 +527,6 @@ input:focus-visible {
 @media (max-width: 600px) {
   .container {
     width: min(100% - 2rem, 1160px);
-  }
-
-  .intro__body {
-    font-size: 1.0625rem;
   }
 
   .channels {
