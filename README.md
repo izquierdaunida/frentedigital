@@ -10,6 +10,7 @@ Construida con [Astro](https://astro.build) y publicada en GitHub Pages.
 ## Qué incluye
 
 - Página principal con el texto de presentación y el cartel del Frente Digital (1080 × 1440, optimizado en WebP responsive).
+- Diseño a sangre: panel izquierdo rojo a 100svh con el cartel centrado, sin cabecera.
 - Formulario con nombre, correo electrónico, código postal y consentimiento de privacidad.
 - Envío directo a Action Network mediante su API v2, sin exponer ninguna API key.
 - Página `/gracias` con llamadas a la Comunidad de WhatsApp y al canal de Telegram.
