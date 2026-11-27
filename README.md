@@ -11,6 +11,7 @@ Construida con [Astro](https://astro.build) y publicada en GitHub Pages.
 
 - Página principal con el texto de presentación y el cartel del Frente Digital (1080 × 1440, optimizado en WebP responsive).
 - Diseño a sangre: panel izquierdo rojo a 100svh con el cartel centrado, sin cabecera.
+- Sin footer; el enlace a izquierdaunida.org queda al final de la columna del formulario.
 - Formulario con nombre, correo electrónico, código postal y consentimiento de privacidad.
 - Envío directo a Action Network mediante su API v2, sin exponer ninguna API key.
 - Página `/gracias` con llamadas a la Comunidad de WhatsApp y al canal de Telegram.
@@ -31,8 +32,7 @@ npm run preview  # sirve dist/
 
 ```text
 src/config.ts                 IDs y URLs de Action Network / redes
-src/layouts/Base.astro        Estructura, SEO y pie comunes
-src/components/Footer.astro   Pie
+src/layouts/Base.astro        Estructura y SEO comunes
 src/pages/index.astro         Landing y formulario
 src/pages/gracias.astro       Página de agradecimiento
 src/pages/privacidad.astro    Aviso legal y privacidad
