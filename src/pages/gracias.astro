@@ -4,23 +4,45 @@ import { SITE } from '../config';
 
 const title = '¡Gracias por unirte! · Frente Digital';
 const description =
-  'Ya formas parte del Frente Digital de Izquierda Unida. Entra en la Comunidad de WhatsApp y en el canal de Telegram.';
+  'Comparte el Frente Digital de Izquierda Unida por WhatsApp y anima a más personas a unirse.';
 ---
 
 <Base title={title} description={description} noindex>
   <section class="thanks">
     <div class="container thanks__inner">
-      <p class="thanks__eyebrow">Frente Digital · Izquierda Unida</p>
       <h1>¡Gracias por unirte!</h1>
       <p class="thanks__lead">
-        Ya formas parte del Frente Digital. Para no perderte las convocatorias, movilizaciones y
-        actividades que organizamos cerca de ti, entra en nuestros canales:
+        Comparte este mensaje por WhatsApp para animar a amigos, familiares y compañeras a que
+        también se unan:
       </p>
+
+      <div class="wa-preview-wrap">
+        <p class="wa-preview__label">Vista previa del mensaje</p>
+        <div class="wa-preview">
+          <p><strong>🔻 Ya me he apuntado en el Frente Digital de Izquierda Unida</strong></p>
+          <p>
+            En <strong>momentos difíciles</strong>, toca juntarnos frente a la amenaza reaccionaria.
+            Nos va a encontrar más fuertes que nunca, <strong>hombro con hombro</strong>,
+            defendiendo los derechos que hemos conquistado.
+          </p>
+          <p>
+            Las redes sociales no son neutrales. Están en manos de oligarcas vinculados a la extrema
+            derecha que silencian y manipulan nuestros contenidos. El Frente Digital es una{' '}
+            <strong>red autónoma y soberana</strong> para conectarnos sin depender de sus algoritmos.
+          </p>
+          <p>
+            <strong>
+              Apúntate tu también:{' '}
+              <a href="https://frentedigital.iunida.org">https://frentedigital.iunida.org</a>
+            </strong>
+          </p>
+        </div>
+      </div>
 
       <div class="channels">
         <a
           class="channel channel--whatsapp"
-          href={SITE.whatsapp}
+          href={SITE.whatsappShare}
           target="_blank"
           rel="noopener"
         >
@@ -32,8 +54,8 @@ const description =
             </svg>
           </span>
           <span>
-            <span class="channel__title">Comunidad de WhatsApp</span>
-            <span class="channel__desc">Entra en la comunidad de Izquierda Unida</span>
+            <span class="channel__title">Compartir por WhatsApp</span>
+            <span class="channel__desc">Envía el mensaje a tus contactos</span>
           </span>
         </a>
 
@@ -56,13 +78,6 @@ const description =
           </span>
         </a>
       </div>
-
-      <p class="thanks__lead">
-        Si prefieres empezar por otro sitio, puedes seguir la actualidad en{' '}
-        <a href="https://izquierdaunida.org" rel="noopener">izquierdaunida.org</a>.
-      </p>
-
-      <a class="thanks__back" href="/">Volver al inicio</a>
     </div>
   </section>
 </Base>

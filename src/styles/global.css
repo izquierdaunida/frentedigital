@@ -337,11 +337,51 @@ input:focus-visible {
   line-height: 1.65;
 }
 
+.wa-preview-wrap {
+  max-width: 620px;
+  margin: 2rem auto 0;
+  text-align: left;
+}
+
+.wa-preview__label {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.wa-preview {
+  padding: 1rem 1.2rem;
+  border-radius: 14px 14px 14px 4px;
+  background: #dcf8c6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  color: #111;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.wa-preview p {
+  margin: 0 0 0.75rem;
+}
+
+.wa-preview p:last-child {
+  margin-bottom: 0;
+}
+
+.wa-preview a {
+  color: #027eb5;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+
 .channels {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
-  margin: 2.5rem 0 1.5rem;
+  max-width: 620px;
+  margin: 1.5rem auto 0;
   text-align: left;
 }
 
