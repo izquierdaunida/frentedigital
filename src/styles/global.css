@@ -8,7 +8,6 @@
   --line-strong: #c9c9c9;
   --soft: #f7f7f7;
   --whatsapp: #25d366;
-  --telegram: #229ed9;
   --font-sans: 'IBM Plex Sans Variable', 'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -376,65 +375,54 @@ input:focus-visible {
   overflow-wrap: anywhere;
 }
 
-.channels {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  max-width: 620px;
-  margin: 1.5rem auto 0;
-  text-align: left;
-}
-
-.channel {
+.wa-share {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  padding: 1.15rem 1.25rem;
-  border: 1px solid var(--line);
-  background: #fff;
-  color: var(--ink);
+  width: 100%;
+  max-width: 620px;
+  margin: 1.5rem auto 0;
+  padding: 1.05rem 1.4rem;
+  border-radius: 8px;
+  background: var(--whatsapp);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.28);
+  color: #fff;
   text-decoration: none;
-  transition: border-color 160ms ease, transform 160ms ease;
+  transition: background 160ms ease, transform 160ms ease;
 }
 
-.channel:hover {
-  border-color: var(--line-strong);
-  transform: translateY(-2px);
+.wa-share:hover {
+  background: #1ebe5d;
+  transform: translateY(-1px);
 }
 
-.channel__icon {
+.wa-share__icon {
   display: grid;
   flex: 0 0 auto;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.9rem;
+  height: 2.9rem;
   place-items: center;
   border-radius: 50%;
-  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
 }
 
-.channel__icon svg {
-  width: 1.35rem;
-  height: 1.35rem;
+.wa-share__icon svg {
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
-.channel--whatsapp .channel__icon {
-  background: var(--whatsapp);
-}
-
-.channel--telegram .channel__icon {
-  background: var(--telegram);
-}
-
-.channel__title {
+.wa-share__title {
   display: block;
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
-.channel__desc {
+.wa-share__desc {
   display: block;
-  color: var(--muted);
   font-size: 0.85rem;
   line-height: 1.4;
+  opacity: 0.9;
 }
 
 .thanks__back {
@@ -569,8 +557,8 @@ input:focus-visible {
     width: min(100% - 2rem, 1160px);
   }
 
-  .channels {
-    grid-template-columns: minmax(0, 1fr);
+  .wa-share {
+    padding: 1rem 1.1rem;
   }
 
   .prose {
