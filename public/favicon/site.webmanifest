@@ -10,12 +10,12 @@
   "theme_color": "#df0022",
   "icons": [
     {
-      "src": "/favicon-32x32.png",
+      "src": "/favicon/favicon-32x32.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/favicon-192x192.png",
+      "src": "/favicon/favicon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     }

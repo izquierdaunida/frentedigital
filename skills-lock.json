@@ -1,0 +1,68 @@
+{
+  "version": 2,
+  "skills": {
+    "add-integration": {
+      "source": "incluud/astro-agent-skills",
+      "commit": "4b4355ecea8ef4f68c9025f3de5a73c27df59310",
+      "sourceType": "github",
+      "skillPath": "skills/add-integration/SKILL.md",
+      "computedHash": "209cdcbef339fec119c09e64a4ecd8fdaaad74a523924e33b7b103953e6a1aa2"
+    },
+    "astro-best-practices": {
+      "source": "incluud/astro-agent-skills",
+      "commit": "4b4355ecea8ef4f68c9025f3de5a73c27df59310",
+      "sourceType": "github",
+      "skillPath": "skills/astro-best-practices/SKILL.md",
+      "computedHash": "c1985bff9075848cd7670e72f49e72f06a53a24881580c6e2bf9b010b30527a7"
+    },
+    "bem": {
+      "source": "yeeroen/skills",
+      "commit": "ff2146d6835d6b4fa20c1668b41a57ed9df9ffd2",
+      "sourceType": "github",
+      "skillPath": "skills/bem/SKILL.md",
+      "computedHash": "15ea7454b8ba98e5db907206a1d45a3e322c3417b3c49c08416b5b90ae08a287"
+    },
+    "content-collection": {
+      "source": "incluud/astro-agent-skills",
+      "commit": "4b4355ecea8ef4f68c9025f3de5a73c27df59310",
+      "sourceType": "github",
+      "skillPath": "skills/content-collection/SKILL.md",
+      "computedHash": "487695b59504ec046f3ff3b48992ae079b8b5fa3a8d4c8afb831a3a395eefd3b"
+    },
+    "create-component": {
+      "source": "incluud/astro-agent-skills",
+      "commit": "4b4355ecea8ef4f68c9025f3de5a73c27df59310",
+      "sourceType": "github",
+      "skillPath": "skills/create-component/SKILL.md",
+      "computedHash": "dfaeec3b9170c8d5f9c933113a1b458e7f4d3dcfb97be9f63e4730f70fb3fdda"
+    },
+    "docs-lookup": {
+      "source": "incluud/astro-agent-skills",
+      "commit": "4b4355ecea8ef4f68c9025f3de5a73c27df59310",
+      "sourceType": "github",
+      "skillPath": "skills/docs-lookup/SKILL.md",
+      "computedHash": "e9ee5c43cf33cbe6e507890c868e9455ca72516fb1778579c18e4ce1e0d9e564"
+    },
+    "migrate": {
+      "source": "incluud/astro-agent-skills",
+      "commit": "4b4355ecea8ef4f68c9025f3de5a73c27df59310",
+      "sourceType": "github",
+      "skillPath": "skills/migrate/SKILL.md",
+      "computedHash": "6a1cb4caebd2a6ec0bead45eec2aec455aaff5c34ad94e58d403891e060cb952"
+    },
+    "modern-css": {
+      "source": "moderncss/skills",
+      "commit": "b9ff899e4720a0aa0055673ff9a160a64e45c9af",
+      "sourceType": "github",
+      "skillPath": "skills/modern-css/SKILL.md",
+      "computedHash": "e89aa2166dc5ef48481dc171f9eda5cfc8815c5083729b0630a0c265ab3b891a"
+    },
+    "modern-web-guidance": {
+      "source": "GoogleChrome/modern-web-guidance",
+      "commit": "2b4aa13a72dd47cd135b06ce5abfccd92e19b24f",
+      "sourceType": "github",
+      "skillPath": "skills/modern-web-guidance/SKILL.md",
+      "computedHash": "1a97aea5d1c5abbf1b7b022ae7a2833a014627f741ba3cbd8cb6249a3ab359db"
+    }
+  }
+}

@@ -10,43 +10,47 @@ const description =
 <Base title={title} description={description} noindex>
   <section class="thanks">
     <div class="container thanks__inner">
-      <h1>¡Gracias por unirte!</h1>
+      <h1 class="thanks__title">¡Gracias por unirte!</h1>
       <p class="thanks__lead">
         Comparte este mensaje por WhatsApp para animar a amigos, familiares y compañeras a que
         también se unan:
       </p>
 
-      <div class="wa-preview-wrap">
+      <div class="thanks__preview-wrap">
         <p class="wa-preview__label">Vista previa del mensaje</p>
         <div class="wa-preview">
-          <p><strong>🔻 Ya me he apuntado en el Frente Digital de Izquierda Unida</strong></p>
-          <p>
+          <p class="wa-preview__paragraph">
+            <strong>🔻 Ya me he apuntado en el Frente Digital de Izquierda Unida</strong>
+          </p>
+          <p class="wa-preview__paragraph">
             En <strong>momentos difíciles</strong>, toca juntarnos frente a la amenaza reaccionaria.
             Nos va a encontrar más fuertes que nunca, <strong>hombro con hombro</strong>,
             defendiendo los derechos que hemos conquistado.
           </p>
-          <p>
+          <p class="wa-preview__paragraph">
             Las redes sociales no son neutrales. Están en manos de oligarcas vinculados a la extrema
             derecha que silencian y manipulan nuestros contenidos. El Frente Digital es una{' '}
             <strong>red autónoma y soberana</strong> para conectarnos sin depender de sus algoritmos.
           </p>
-          <p>
+          <p class="wa-preview__paragraph">
             <strong>
               Apúntate tu también:{' '}
-              <a href="https://frentedigital.iunida.org">https://frentedigital.iunida.org</a>
+              <a class="wa-preview__link" href="https://frentedigital.iunida.org">
+                https://frentedigital.iunida.org
+              </a>
             </strong>
           </p>
         </div>
       </div>
 
       <a
-        class="wa-share"
+        class="wa-share thanks__share"
         href={SITE.whatsappShare}
         target="_blank"
         rel="noopener"
       >
         <span class="wa-share__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor">
+          <svg class="wa-share__svg" viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
             ></path>
@@ -60,3 +64,104 @@ const description =
     </div>
   </section>
 </Base>
+
+<style>
+  .thanks__preview-wrap {
+    max-width: 620px;
+    margin: 2rem auto 0;
+    text-align: left;
+  }
+
+  .wa-preview__label {
+    margin: 0 0 0.5rem;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .wa-preview {
+    padding: 1rem 1.2rem;
+    border-radius: 14px 14px 14px 4px;
+    background: #dcf8c6;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    color: #111;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .wa-preview__paragraph {
+    margin: 0 0 0.75rem;
+    text-wrap: pretty;
+  }
+
+  .wa-preview__paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  .wa-preview__link {
+    color: #027eb5;
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+  }
+
+  .wa-share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 620px;
+    padding: 1.05rem 1.4rem;
+    border-radius: 8px;
+    background: var(--whatsapp);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.28);
+    color: #fff;
+    text-decoration: none;
+    transition: background 160ms ease, transform 160ms ease;
+  }
+
+  .wa-share:hover {
+    background: #1ebe5d;
+    transform: translateY(-1px);
+  }
+
+  .wa-share__icon {
+    display: grid;
+    flex: 0 0 auto;
+    width: 2.9rem;
+    height: 2.9rem;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .wa-share__svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .thanks__share {
+    margin: 1.5rem auto 0;
+  }
+
+  .wa-share__title {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .wa-share__desc {
+    display: block;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    opacity: 0.9;
+  }
+
+  @media (width <= 600px) {
+    .wa-share {
+      padding: 1rem 1.1rem;
+    }
+  }
+</style>

@@ -11,7 +11,7 @@ const description = SITE.description;
 <Base title={title} description={description}>
   <div class="page">
     <h1 class="sr-only">Frente Digital de Izquierda Unida</h1>
-    <div class="page__grid">
+    <div class="page__grid intro">
       <figure class="intro__media">
           <Picture
             src={fdiu}
@@ -24,35 +24,37 @@ const description = SITE.description;
             loading="eager"
             fetchpriority="high"
             decoding="async"
+            class="intro__image"
+            pictureAttributes={{ class: 'intro__picture' }}
           />
         </figure>
 
       <div class="content">
         <div class="intro__body">
-          <p>
+          <p class="intro__paragraph intro__paragraph--lead">
             En <strong>momentos difíciles</strong>, toca juntarnos frente a la amenaza reaccionaria.
             Nos va a encontrar más fuertes que nunca, <strong>hombro con hombro</strong>,
             defendiendo los derechos que hemos conquistado.
           </p>
-          <p>
+          <p class="intro__paragraph">
             <strong>Lanzamos el Frente Digital de Izquierda Unida</strong>: un espacio para
             organizar la resistencia y participar en las luchas, acciones y movilizaciones
             antifascistas.
           </p>
-          <p>
+          <p class="intro__paragraph">
             Las redes sociales no son neutrales. Están en manos de oligarcas vinculados a la
             extrema derecha que silencian y manipulan nuestros contenidos. El Frente Digital es una{' '}
             <strong>red autónoma y soberana</strong> para conectarnos sin depender de sus algoritmos.
           </p>
-          <p>
+          <p class="intro__paragraph">
             En el Frente Digital podrás conocer las <strong>convocatorias locales</strong>,
             movilizaciones y actividades que IU organiza en tu territorio, y participar en las{' '}
             <strong>acciones digitales</strong> que impulsamos.
           </p>
-          <p><strong>Es la hora de dar el paso:</strong></p>
+          <p class="intro__paragraph"><strong>Es la hora de dar el paso:</strong></p>
         </div>
 
-        <div class="form-block">
+        <div class="content__form-block">
           <form
             id="frente-digital-form"
             method="get"
@@ -61,21 +63,23 @@ const description = SITE.description;
             data-success="/gracias"
             aria-label="Inscripción en el Frente Digital"
           >
-          <div class="field">
+          <div class="field content__field">
             <label class="sr-only" for="first_name">Nombre</label>
             <input
+              class="field__input"
               id="first_name"
               name="first_name"
               type="text"
-              placeholder="Nombre"
+              placeholder="Nombre *"
               autocomplete="given-name"
               required
             />
           </div>
 
-          <div class="field">
+          <div class="field content__field">
             <label class="sr-only" for="email">Correo electrónico</label>
             <input
+              class="field__input"
               id="email"
               name="email"
               type="email"
@@ -88,9 +92,10 @@ const description = SITE.description;
             />
           </div>
 
-          <div class="field">
+          <div class="field content__field">
             <label class="sr-only" for="zip_code">Código postal</label>
             <input
+              class="field__input"
               id="zip_code"
               name="zip_code"
               type="text"
@@ -102,11 +107,13 @@ const description = SITE.description;
             />
           </div>
 
-          <label class="consent" for="GDPR2">
-            <input id="GDPR2" name="GDPR2" type="checkbox" value="1" required />
+          <label class="consent content__consent" for="GDPR2">
+            <input class="consent__checkbox" id="GDPR2" name="GDPR2" type="checkbox" value="1" required />
             <span>
               He leído y acepto la{' '}
-              <a href={SITE.privacy} target="_blank" rel="noopener">política de privacidad</a>.
+              <a class="consent__link" href={SITE.privacy} target="_blank" rel="noopener">
+                política de privacidad
+              </a>.
             </span>
           </label>
 
@@ -114,25 +121,34 @@ const description = SITE.description;
             ¡Quiero unirme al Frente Digital de IU!
           </button>
 
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="form-status content__form-status" id="form-status" role="status" aria-live="polite"></p>
 
-          <p class="form-note">
+          <p class="form-note content__form-note">
             Al enviar el formulario aceptas que Izquierda Unida trate tus datos para gestionar tu
             participación en el Frente Digital y enviarte información. Puedes darte de baja cuando
-            quieras. Más información en la <a href={SITE.privacy}>política de privacidad</a>.
+            quieras. Más información en la{' '}
+            <a class="form-note__link" href={SITE.privacy}>política de privacidad</a>.
           </p>
 
           <noscript>
-            <p class="form-note">
+            <p class="form-note content__form-note">
               Para enviar el formulario necesitas JavaScript. También puedes{' '}
-              <a href={ACTION_NETWORK.publicFormUrl}>hacerlo en Action Network</a>.
+              <a class="form-note__link" href={ACTION_NETWORK.publicFormUrl}>
+                hacerlo en Action Network
+              </a>.
             </p>
           </noscript>
           </form>
         </div>
 
         <p class="content__site-link">
-          <a href="https://izquierdaunida.org" rel="noopener">izquierdaunida.org</a>
+          <a
+            class="content__site-link-anchor"
+            href="https://izquierdaunida.org"
+            rel="noopener"
+          >
+            izquierdaunida.org
+          </a>
         </p>
       </div>
     </div>
@@ -150,14 +166,15 @@ const description = SITE.description;
 
     const clearStatus = () => {
       status.textContent = '';
-      status.classList.remove('is-error');
+      status.classList.remove('form-status--error');
     };
 
-    const showError = (message) => {
+    const showError = (message: string) => {
       status.textContent = message;
-      status.classList.add('is-error');
+      status.classList.add('form-status--error');
 
       const fallback = document.createElement('a');
+      fallback.className = 'form-status__link';
       fallback.href = 'https://actionnetwork.org/forms/frente-digital-iu';
       fallback.target = '_blank';
       fallback.rel = 'noopener';
@@ -237,3 +254,265 @@ const description = SITE.description;
     });
   }
 </script>
+
+<style>
+  .page {
+    padding: 0;
+  }
+
+  .page__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    align-items: stretch;
+    width: 100%;
+    min-height: 0;
+    background: none;
+  }
+
+  .intro__media {
+    position: static;
+    align-self: start;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0.5rem;
+    background: var(--iu-red);
+  }
+
+  .intro__picture {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .intro__image {
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+    height: auto;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    padding: 2.5rem 1.25rem 3rem;
+    background: #fff;
+  }
+
+  .intro__body {
+    margin-top: 0;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  .intro__paragraph--lead {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .intro__paragraph {
+    margin: 0 0 1.25rem;
+    text-wrap: pretty;
+  }
+
+  .intro__paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  .content__form-block {
+    margin-top: 1rem;
+  }
+
+  .content__field {
+    margin-bottom: 0.9rem;
+  }
+
+  .field__input {
+    width: 100%;
+    height: 3.1rem;
+    padding: 0 0.95rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 0;
+    background: #fff;
+    color: #333;
+    font-size: 1.2rem;
+  }
+
+  .field__input::placeholder {
+    color: #8a8a8a;
+    opacity: 1;
+  }
+
+  .field__input:focus {
+    border-color: var(--iu-red);
+    outline: 2px solid var(--iu-red);
+    outline-offset: -1px;
+  }
+
+  .consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    color: var(--ink);
+    font-size: 0.875rem;
+    line-height: 1.45;
+    cursor: pointer;
+  }
+
+  .consent__checkbox {
+    flex: 0 0 auto;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0.15rem 0 0;
+    accent-color: var(--iu-red);
+  }
+
+  .consent__link {
+    color: var(--iu-red);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 1rem 1.1rem;
+    border: 0;
+    border-radius: 6px;
+    background: var(--iu-red);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.25;
+    cursor: pointer;
+    transition: background 160ms ease;
+  }
+
+  .btn-submit:hover {
+    background: var(--iu-red-dark);
+  }
+
+  .btn-submit:disabled {
+    opacity: 0.65;
+    cursor: wait;
+  }
+
+  .form-note {
+    color: var(--muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    text-align: center;
+    text-wrap: pretty;
+  }
+
+  .content__consent {
+    margin: 1rem 0 1.35rem;
+  }
+
+  .content__form-note {
+    margin: 1rem 0 0;
+  }
+
+  .form-note__link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .form-status {
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+
+  .content__form-status {
+    margin: 0.9rem 0 0;
+  }
+
+  .form-status--error {
+    color: #a50018;
+  }
+
+  .form-status__link {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .content__site-link {
+    order: 3;
+    margin: 1rem 0 0;
+    color: var(--muted);
+    font-size: 0.8125rem;
+    text-align: right;
+  }
+
+  .content__site-link-anchor {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  @media (600px < width < 900px) {
+    .intro__media {
+      min-height: 70svh;
+      padding: 2rem;
+    }
+
+    .intro__image {
+      width: auto;
+      max-height: 60svh;
+    }
+  }
+
+  @media (width >= 900px) {
+    .page__grid {
+      position: fixed;
+      inset: 0;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: minmax(0, 1fr);
+      background: linear-gradient(90deg, var(--iu-red) 0 50%, #fff 50% 100%);
+    }
+
+    .intro__media {
+      place-items: center end;
+      height: 100svh;
+      padding: 2rem;
+    }
+
+    .intro__image {
+      width: auto;
+      max-width: min(100%, 700px);
+      max-height: 88svh;
+    }
+
+    .content {
+      block-size: 100%;
+      min-block-size: 0;
+      overflow-y: auto;
+      overscroll-behavior-y: contain;
+      scrollbar-gutter: stable;
+      justify-content: safe center;
+      padding: 2.5rem 2rem 3rem;
+    }
+
+    .intro__body,
+    .content__form-block,
+    .content__site-link {
+      max-width: 600px;
+    }
+
+    .content__site-link {
+      text-align: center;
+    }
+  }
+</style>

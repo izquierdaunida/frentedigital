@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/ibm-plex-sans';
-import '../styles/global.css';
+import '../styles/reset.css';
+import '../styles/style.css';
 import { SITE } from '../config';
 
 interface Props {
@@ -12,8 +13,8 @@ interface Props {
 const { title, description = SITE.description, noindex = false } = Astro.props;
 const site = Astro.site ?? new URL(SITE.url);
 const canonical = new URL(Astro.url.pathname, site);
-const brandImage = new URL('/og-frente-digital.png', site);
-const socialImage = new URL('/og-frente-digital-poster.jpg', site);
+const brandImage = new URL('/og/frente-digital.png', site);
+const socialImage = new URL('/og/frente-digital-poster.jpg', site);
 const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
 
 const socialProfiles = [
@@ -96,8 +97,8 @@ const jsonLd = {
       inLanguage: 'es-ES',
       ...(isHome
         ? {
-            datePublished: '2026-11-26',
-            dateModified: '2026-11-26',
+          datePublished: SITE.datePublished,
+          dateModified: SITE.dateModified,
             speakable: {
               '@type': 'SpeakableSpecification',
               cssSelector: ['.intro__body'],
@@ -132,10 +133,10 @@ const jsonLd = {
     <link rel="alternate" hreflang="es" href={canonical.href} />
     <link rel="alternate" hreflang="es-ES" href={canonical.href} />
     <link rel="alternate" hreflang="x-default" href={canonical.href} />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
     <link rel="preconnect" href="https://actionnetwork.org" crossorigin />
     <link rel="me" href="https://mastodon.social/@izquierda_unida" />
 
@@ -171,7 +172,6 @@ const jsonLd = {
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
-    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <main id="contenido">
       <slot />
     </main>

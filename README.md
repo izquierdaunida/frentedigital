@@ -37,19 +37,34 @@ src/pages/index.astro         Landing y formulario
 src/pages/gracias.astro       Página de agradecimiento
 src/pages/privacidad.astro    Aviso legal y privacidad
 src/pages/404.astro           Página de error 404
-src/styles/global.css         Estilos
+src/styles/reset.css          Reset base
+src/styles/style.css          Estilos generales
+src/pages/*.astro             Estilos específicos dentro de cada página
 src/assets/fdiu.jpg           Cartel del Frente Digital (original)
-public/favicon-32x32.png      Favicon oficial de IU
-public/favicon-192x192.png    Favicon oficial de IU
-public/apple-touch-icon.png   Icono para iOS
-public/og-frente-digital.png  Imagen de marca para JSON-LD (1200 × 630)
-public/og-frente-digital-poster.jpg  Cartel para OG/Telegram (1080 × 1440, temporal)
+public/favicon/site.webmanifest       Manifiesto de la web
+public/favicon/favicon-32x32.png      Favicon oficial de IU
+public/favicon/favicon-192x192.png    Favicon oficial de IU
+public/favicon/apple-touch-icon.png   Icono para iOS
+public/og/frente-digital.png  Imagen de marca para JSON-LD (1200 × 630)
+public/og/frente-digital-poster.jpg  Cartel para OG/Telegram (1080 × 1440, temporal)
 public/robots.txt             Reglas de rastreo y sitemap
 public/llms.txt               Resumen para motores generativos
-public/site.webmanifest       Manifiesto de la web
 public/CNAME                  Dominio personalizado de GitHub Pages
 .github/workflows/deploy.yml  Despliegue automático a GitHub Pages
 ```
+
+## Skills para agentes de IA
+
+Las guías específicas para agentes están en `.agents/skills/`. Antes de una tarea que encaje con ellas, consulta la `SKILL.md` correspondiente:
+
+- `astro-best-practices`: guía general para implementar o revisar código Astro.
+- `docs-lookup`: resolver dudas sobre documentación y APIs actuales de Astro.
+- `create-component`: crear componentes, páginas, layouts o rutas.
+- `add-integration`: añadir o configurar integraciones, adaptadores o frameworks.
+- `content-collection`: trabajar con contenido estructurado que requiera colecciones.
+- `migrate`: migrar a Astro o actualizar entre versiones.
+
+Combina la skill específica con `astro-best-practices` cuando corresponda. La existencia de una skill no implica que haya que añadir esa tecnología: elige la solución más simple que encaje con el sitio.
 
 ## SEO, GEO y previsualizaciones
 
@@ -58,11 +73,12 @@ public/CNAME                  Dominio personalizado de GitHub Pages
 - Sitemap generado con `@astrojs/sitemap` en `/sitemap-index.xml`; solo incluye la home.
 - `public/robots.txt` apunta al sitemap.
 - Datos estructurados JSON-LD: `PoliticalParty`, `WebSite` y `WebPage`, con dirección, área servida, perfiles sociales y `sameAs`.
+- Las fechas `datePublished` y `dateModified` del JSON-LD de la portada están en `src/config.ts`; actualiza `SITE.dateModified` cuando cambie el contenido editorial.
 - Señales geográficas (`geo.region`, `geo.placename`, `geo.position`) y dirección de Madrid en el JSON-LD.
 - `public/llms.txt` con un resumen factual, enlaces oficiales y contacto para motores generativos.
 - Open Graph completo (`og:title`, `og:description`, `og:image`, `og:image:type`, dimensiones y alt) y Twitter Card.
-- Imagen de previsualización social: cartel real `og-frente-digital-poster.jpg` de 1080 × 1440, usado temporalmente hasta tener la imagen definitiva.
-- La imagen de marca `og-frente-digital.png` (1200 × 630) se mantiene para el `logo` del JSON-LD.
+- Imagen de previsualización social: cartel real `og/frente-digital-poster.jpg` de 1080 × 1440, usado temporalmente hasta tener la imagen definitiva.
+- La imagen de marca `og/frente-digital.png` (1200 × 630) se mantiene para el `logo` del JSON-LD.
 - `site.webmanifest`, iconos y `theme-color`.
 
 Telegram cachea las previsualizaciones por URL. Si después de publicar sigue mostrando una versión antigua, envía la URL a [@WebpageBot](https://t.me/WebpageBot) para forzar la actualización, o comparte un enlace con un parámetro de versión (`https://frentedigital.iunida.org/?v=2`) para ver la vista previa nueva.
